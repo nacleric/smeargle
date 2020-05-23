@@ -20,6 +20,12 @@
 #gallery {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: flex-start;
+}
+
+.gallery-photo-container {
+  position: relative;
 }
 
 .gallery-photo {
@@ -30,6 +36,16 @@
 }
 
 .gallery-photo:hover {
-  width: 220px;
-  height: 220px;
+  width: 210px;
+  height: 210px;
+}
+
+.gallery-photo-title {
+  text-align: center;
+}
+
+.delete-button {
+  position: absolute;
+  top: 0;
+  right: 0;
 }

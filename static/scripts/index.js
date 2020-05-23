@@ -1,33 +1,46 @@
 function loadPhotos() {
   let gallery = document.getElementById("gallery");
-  for (key in localStorage) {
-    let item = JSON.parse(localStorage.getItem(key));
-    let imgUrl = item.url;
-    let imgTitle = item.title;
-    console.log(key)
+  for (let i = 0; i < localStorage.length; i++) {
+    let key = localStorage.key(i);
     if (key !== "isDark") {
-      let newElement = `
-        <div>
-          <a href="${imgUrl}"><img class="gallery-photo" src="${imgUrl}"></img></a>
-          <p>${imgTitle}</p>
-          <button class="delete-button">Delete</button>
-        </div>
-      `
-      gallery.innerHTML += newElement;
+      try {
+        let item = JSON.parse(localStorage.getItem(key));
+        let imgUrl = item.url;
+        console.log(imgUrl)
+        let imgTitle = item.title;
+        let newElement = `
+            <div class="gallery-photo-container">
+              <a href="${imgUrl}">
+                <img class="gallery-photo" src="${imgUrl}"></img>
+              </a>
+              <a class="delete-button"><i data-feather="x"></i></a>
+              <p class="gallery-photo-title">${imgTitle}</p>
+            </div>
+        `
+        gallery.innerHTML += newElement;
+      } catch (error) {
+        console.error(error);
+      }
     }
   }
 }
 
-let deleteBtn = document.querySelectorAll(".delete-button");
-for (let i = 0; i < deleteBtn.length; i++) {
-  console.log("ree")
-  deleteBtn[i].addEventListener("click", () => {
-    let element = deleteBtn[i].parentElement
-    let item = element.lastElementChild.innerText
-    localStorage.removeItem(item)
-    element.remove()    
-  })
+function bindDeleteToButtons() {
+  let deleteButtons = document.querySelectorAll(".delete-button");
+  for (let i = 0; i < deleteButtons.length; i++) {
+    let button = deleteButtons[i]
+    button.addEventListener("click", function() {
+      let gallery = document.getElementById("gallery");
+      let galleryPhotoContainer = button.parentElement;
+      gallery.removeChild(galleryPhotoContainer)
+      let titleTag = galleryPhotoContainer.childNodes[5].innerHTML;
+      localStorage.removeItem(titleTag)
+    })
+  }
 }
 
-
-loadPhotos()
+window.onload = function() {
+  loadPhotos();
+  bindDeleteToButtons();
+  feather.replace()
+}

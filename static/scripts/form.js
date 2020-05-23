@@ -3,6 +3,7 @@ imgSubmit.addEventListener("click", function() {
   let imgObj = {
     title: document.getElementById("form-title").value,
     url: document.getElementById("form-url").value,
+    other: document.getElementById("form-other").value,
     date: new Date()
   }
   localStorage.setItem(imgObj.title, JSON.stringify(imgObj));
