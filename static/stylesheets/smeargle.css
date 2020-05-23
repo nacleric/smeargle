@@ -1,0 +1,35 @@
+.image-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-form-item {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.image-form-button {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gallery-photo {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  transition: width 200ms linear;
+}
+
+.gallery-photo:hover {
+  width: 220px;
+  height: 220px;
+}
