@@ -1,20 +1,39 @@
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .image-form {
   display: flex;
   flex-direction: column;
 }
 
 .image-form-item {
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.image-form-button {
-  margin-left: auto;
-  margin-right: auto;
+.mybutton {
   margin-top: 10px;
   margin-bottom: 10px;
+  width: 115px;
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid var(--text-color);
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: var(--text-color);
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.mybutton:hover{
+  color: var(--opposite-text-color);
+  background-color: var(--opposite-background-color);
+  border-color: var(--opposite-background-color);
 }
 
 #gallery {

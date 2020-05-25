@@ -8,12 +8,16 @@ html, html[data-theme="light"] {
   --background-color: rgb(252, 252, 252);
   --text-color: hsl(213, 33%, 21%);
   --text-color-fade: hsla(213, 33%, 21%, 0.900);
+  --opposite-background-color: hsl(213, 33%, 21%);
+  --opposite-text-color: rgb(252, 252, 252);
 }
 
 html[data-theme="dark"] {
   --background-color: hsl(213, 33%, 21%);
   --text-color: hsl(0, 0%, 99%);
   --text-color-fade: hsl(0, 0%, 99%, 0.800);
+  --opposite-background-color: rgb(252, 252, 252);
+  --opposite-text-color: hsl(213, 33%, 21%);
 }
 
 body {
@@ -90,52 +94,6 @@ nav {
   margin-top: 40px;
 }
 
-.posts-section {
-  margin-left: auto;
-  margin-right: auto;
-  width: 70%;
-}
-
-.posts-item {
-
-}
-
-.posts-item-title {
-  font-family: lato;
-  font-weight: bold;
-  font-size: 2rem;
-  text-decoration: none;
-}
-
-.posts-item-intro {
-  font-family: raleway;
-  font-size: 1.1rem;
-  color: var(--text-color-fade);
-}
-
-.content-section {
-  margin-left: auto;
-  margin-right: auto;
-  width: 70%;
-  font-size: 1.5rem;
-}
-
-.title {
-  font-family: lato;
-  font-size: 3.5rem;
-}
-
-.date {
-  font-family: lato;
-  font-size: 1rem !important;
-}
-
-.intro {
-  margin-top: 30px;
-  font-size: 1.5rem;
-}
-
-
 /* Responsive */
 @media all and (max-width: 800px) {
   body {
@@ -151,17 +109,5 @@ nav {
   .jinja-container {
     margin-left: 1px;
     margin-right: 1px;
-  }
-
-  .banner-text {
-    width: 90%;
-  }
-
-  .title {
-    font-size: 2.25rem;
-  }
-  
-  .date {
-    font-size: 1rem;
   }
 }
