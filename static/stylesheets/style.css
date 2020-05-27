@@ -31,6 +31,7 @@
 }
 
 .mybutton:hover{
+  cursor: pointer;
   color: var(--opposite-text-color);
   background-color: var(--opposite-background-color);
   border-color: var(--opposite-background-color);

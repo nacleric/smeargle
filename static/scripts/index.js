@@ -41,14 +41,21 @@ function bindDeleteToButtons() {
   }
 }
 
-// function exportData() {
-//   let exportButton = document.getElementById("export")
-//   for (let i = 0; i < localStorage.length; i++) {
-//     console.log("pass");
-//     let key = localStorage.key(i);
-    
-//   }
-// }
+let exportButton = document.querySelector("#export");
+exportButton.addEventListener("click", function() {
+  const el = document.createElement("textarea");
+  el.value = JSON.stringify(sortedArray);
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand("copy");
+  document.body.removeChild(el);
+
+  exportButton.innerText = "Copied!"
+  setTimeout(() => { 
+    exportButton.innerText = "Export"
+  }, 1000)
+});
+
 
 window.onload = function() {
   loadPhotos();
