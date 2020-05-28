@@ -19,8 +19,10 @@ function loadPhotos() {
           <a href="${imgUrl}">
             <img class="gallery-photo" src="${imgUrl}"></img>
           </a>
-          <a class="delete-button"><i data-feather="x"></i></a>
-          <p class="gallery-photo-title">${imgTitle}</p>
+          <div class="gallery-photo-data">
+            <p class="gallery-photo-title">${imgTitle}</p>
+            <a class="delete-button"><i data-feather="x"></i></a>
+          </div>
         </div>
     `
     gallery.innerHTML += newElement;
@@ -33,7 +35,7 @@ function bindDeleteToButtons() {
     let button = deleteButtons[i]
     button.addEventListener("click", function() {
       let gallery = document.querySelector("#gallery");
-      let galleryPhotoContainer = button.parentElement;
+      let galleryPhotoContainer = button.parentElement.parentElement;
       gallery.removeChild(galleryPhotoContainer)
       let titleTag = galleryPhotoContainer.childNodes[5].innerHTML;
       localStorage.removeItem(titleTag)

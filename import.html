@@ -25,40 +25,32 @@
     </nav>
 
     <div class="jinja-container">
-      <!-- Main -->
-      <div class="image-form">
-        <div class="center image-form-item">
-          <label>Title</label>
-          <input type="text" id="form-title">
-        </div>
-        <div class="center image-form-item">
-          <label>Image Url</label>
-          <input type="text" id="form-url">
-        </div>
-        <div class="center image-form-item">
-          <label>Other</label>
-          <input type="text" id="form-other" placeholder="Optional">
-        </div>
-        <a id="image-submit" class="center mybutton">Submit</a>
-      </div>
+        <!-- Main -->
+        <h3> Copy paste your image Data </h3>
+        <textarea id="import-area" rows="4" cols="50"></textarea> <br>
+        <a class="mybutton" type="button" id="import-submit">Submit</a>
+
+        <h4> Example: <h4>
+        <p> [{"title":"Fox","url":"https://vignette.wikia.nocookie.net/terminalmontage/images/5/5d/5a3de3537f249f5a2383cccd8757fd194080cc6av2_00.jpg/revision/latest/scale-to-width-down/340?cb=20200205221856","other":"","date":"2020-05-28T01:31:43.712Z"},{"title":"Husky","url":"https://cdn11.bigcommerce.com/s-oe2q4reh/images/stencil/2048x2048/products/738/1295/Siberian_Husky_Puppy__60707.1568507093.jpg?c=2","other":"","date":"2020-05-28T01:27:39.091Z"},{"title":"Corgi","url":"https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/14112506/Pembroke-Welsh-Corgi-standing-outdoors-in-the-fall.jpg","other":"","date":"2020-05-28T01:27:02.340Z"},{"title":"German Shepherd","url":"https://cdn3-www.dogtime.com/assets/uploads/gallery/german-shepherd-dog-breed-pictures/standing-7.jpg","other":"","date":"2020-05-28T01:26:23.726Z"}] </p>
+
+  
     </div>
 
     <script src="https://unpkg.com/feather-icons"></script>
-    <script src="/static/scripts/form.js"></script>
+    <script src="/static/scripts/import.js"></script>
     <script>
       feather.replace()
-
       let toggleDark = document.getElementById("toggle-dark")
       toggleDark.addEventListener("click", () => {
         let html = document.documentElement;
         if (localStorage.getItem("isDark") === null) {
-          html.setAttribute('data-theme', 'dark');
+          html.setAttribute("data-theme", "dark");
           localStorage.setItem("isDark", "true")
         } else if (localStorage.getItem("isDark") === "false") {
-          html.setAttribute('data-theme', 'dark');
+          html.setAttribute("data-theme", "dark");
           localStorage.setItem("isDark", "true")
         } else if (localStorage.getItem("isDark") === "true") {
-          html.setAttribute('data-theme', 'light');
+          html.setAttribute("data-theme", "light");
           localStorage.setItem("isDark", "false")
         }
       })
@@ -66,5 +58,3 @@
 
   </body>
 </html>
-
-<!-- <a target="_blank" class="button" href="https://devtyper.netlify.app/">View Site</a> -->

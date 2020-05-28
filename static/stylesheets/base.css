@@ -20,6 +20,19 @@ html[data-theme="dark"] {
   --opposite-text-color: hsl(213, 33%, 21%);
 }
 
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1.5px solid;
+  border-color: var(--opposite-background-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
 body {
   margin: 0px;
   font-family: raleway;

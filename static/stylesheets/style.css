@@ -60,12 +60,18 @@
   height: 210px;
 }
 
+.gallery-photo-data {
+  display: flex;
+  justify-content: space-between;
+}
+
 .gallery-photo-title {
-  text-align: center;
+  font-size: 1.2rem;
+  display: inline;
+  margin: 5px;
 }
 
 .delete-button {
-  position: absolute;
-  top: 0;
-  right: 0;
+  cursor: pointer;
+  display: block;
 }
