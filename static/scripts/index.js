@@ -21,7 +21,7 @@ function loadPhotos() {
           </a>
           <div class="gallery-photo-data">
             <p class="gallery-photo-title">${imgTitle}</p>
-            <a class="delete-button"><i data-feather="x"></i></a>
+            <a class="gallery-photo-title delete-button">X</a>
           </div>
         </div>
     `
