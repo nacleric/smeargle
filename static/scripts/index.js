@@ -9,8 +9,8 @@ function loadPhotos() {
   }
   
   sortedArray = unsortedArray.sort((a, b) => (new Date(b.date) - new Date(a.date)));
-
-  for (let i = 0; i < sortedArray.length; i++) {
+  console.log(sortedArray)
+  for (let i = 0; i < sortedArray.length-1; i++) {
     let item = sortedArray[i];
     let imgUrl = item.url;
     let imgTitle = item.title;
@@ -36,8 +36,9 @@ function bindDeleteToButtons() {
     button.addEventListener("click", function() {
       let gallery = document.querySelector("#gallery");
       let galleryPhotoContainer = button.parentElement.parentElement;
+      let titleTag = galleryPhotoContainer.childNodes[3].childNodes[1].innerText;
+
       gallery.removeChild(galleryPhotoContainer)
-      let titleTag = galleryPhotoContainer.childNodes[5].innerHTML;
       localStorage.removeItem(titleTag)
     })
   }
