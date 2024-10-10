@@ -293,7 +293,7 @@ form {
 }
 
 
-button {
+.mybutton {
   background-color: #3c4853; /* Primary color */
   color: white; /* Text color */
   border: none; /* Remove default border */
@@ -305,13 +305,13 @@ button {
 }
 
 /* Hover effect */
-button:hover {
+.mybutton:hover {
   background-color: #3c4853; /* Darker shade */
   transform: scale(1.05); /* Slightly enlarge */
 }
 
 /* Focus effect */
-button:focus {
+.mybutton:focus {
   outline: none; /* Remove default focus outline */
   box-shadow: 0 0 0 4px #3c4853; /* Custom focus outline */
 }
