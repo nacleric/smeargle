@@ -291,3 +291,27 @@ form {
   width: auto; /* Maintain aspect ratio */
   display: block; /* Remove inline spacing */
 }
+
+
+button {
+  background-color: #3c4853; /* Primary color */
+  color: white; /* Text color */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+/* Hover effect */
+button:hover {
+  background-color: #3c4853; /* Darker shade */
+  transform: scale(1.05); /* Slightly enlarge */
+}
+
+/* Focus effect */
+button:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 0 4px #3c4853; /* Custom focus outline */
+}
