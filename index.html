@@ -1,57 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Smeargle</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Raleway&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/stylesheets/base.css">
-    <link rel="stylesheet" href="/static/stylesheets/style.css">
-    <script>
-      let html = document.documentElement;
-      if (localStorage.getItem("isDark") === "true") {
-        html.setAttribute('data-theme', 'dark');
-      }
-    </script>
-  </head>
 
-  <body>
-    <nav id="navbar">
-      <span class="navbar-container">
-        <a class="navbar-item" href="/">Smeargle</a>
-        <a style="margin-right: 10px"> | </a>
-        <a href="/form.html" class="mybutton" type="button" id="add-image-button">Add Img</a>
-        <a class="mybutton" type="button" id="export">Export</a>
-        <a href="./import.html" class="mybutton" type="button" id="import">Import</a>
-        <i id="toggle-dark" class="navbar-item darkmode-icon" data-feather="sun"></i>
-      </span>
-    </nav>
+<head>
+  <title>Smeargle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/stylesheets/style.css">
+</head>
 
-    <div class="jinja-container">
-      <!-- Main -->
-      <div id="gallery">
+<body>
+  <div class="navbar">
+    <a href="/">Smeargle</a>
+    <a href="/newdata.html" id="add-image-button">Add Img</a>
+    <a href="/import.html" id="import">Import</a>
+    <a id="export">Export</a>
+  </div>
 
-      </div>
+  <div class="blob">
+    <div id="gallery">
     </div>
+  </div>
 
-    <script src="/static/scripts/index.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script>
-      feather.replace()
-      let toggleDark = document.getElementById("toggle-dark")
-      toggleDark.addEventListener("click", () => {
-        let html = document.documentElement;
-        if (localStorage.getItem("isDark") === null) {
-          html.setAttribute("data-theme", "dark");
-          localStorage.setItem("isDark", "true")
-        } else if (localStorage.getItem("isDark") === "false") {
-          html.setAttribute("data-theme", "dark");
-          localStorage.setItem("isDark", "true")
-        } else if (localStorage.getItem("isDark") === "true") {
-          html.setAttribute("data-theme", "light");
-          localStorage.setItem("isDark", "false")
-        }
-      })
-    </script>
+  <script src="/static/scripts/index.js"></script>
+</body>
 
-  </body>
 </html>
