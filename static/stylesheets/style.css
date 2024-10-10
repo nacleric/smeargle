@@ -274,3 +274,20 @@ form {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 300px;
 }
+
+.note {
+  display: flex; /* Use flexbox to center the image */
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevent scrollbars */
+  margin: 0; /* Remove default margin */
+}
+
+.note-photo {
+  max-width: 100%; /* Prevent the image from exceeding the container's width */
+  max-height: 100%; /* Prevent the image from exceeding the container's height */
+  height: auto; /* Maintain aspect ratio */
+  width: auto; /* Maintain aspect ratio */
+  display: block; /* Remove inline spacing */
+}
