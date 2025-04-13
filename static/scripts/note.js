@@ -1,3 +1,25 @@
+function isUrl(word) {
+  try {
+    const url = new URL(word.startsWith('http') ? word : 'http://' + word);
+    return !!url.hostname;
+  } catch (_) {
+    return false;
+  }
+}
+
+function linkifySentence(sentence) {
+  return sentence
+    .split(/\s+/) // split by spaces
+    .map(word => {
+      if (isUrl(word)) {
+        const href = word.startsWith('http') ? word : `http://${word}`;
+        return `<a href="${href}" target="_blank">${word}</a>`;
+      }
+      return word;
+    })
+    .join(' ');
+}
+
 // Get the full query string from the URL (e.g., ?id=1)
 let queryString = window.location.search;
 
@@ -16,4 +38,4 @@ let noteOther = document.querySelector(".note-other")
 // Dynamically set the image source based on the ID
 notePhoto.setAttribute('src', foo.url); // Assuming you have photos like photo1.jpg, photo2.jpg
 noteTitle.textContent = foo.title
-noteOther.textContent = foo.other
+noteOther.innerHTML = linkifySentence(foo.other)
